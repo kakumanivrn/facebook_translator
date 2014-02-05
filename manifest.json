@@ -1,0 +1,23 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+  "name": "Inline Facebook Translator",
+  "description": "Translate FB Status to Telugu on the fly",
+  "version": "1.6",
+  
+  "background": {
+        "scripts": ["local.js"]
+    },
+
+  "permissions": ["http://*/*", "https://*/*", "tabs"],
+  "browser_action": {
+    "default_icon": "telugu.jpg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["Padma.js", "Shared.js", "Telugu.js", "Unicode.js", "Syllable.js", "RTS.js", "parser.js", "RTSParser.js", "Transformer.js", "RTSTransformer.js", "fb_translate.js"]
+    }
+  ]
+}
